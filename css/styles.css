@@ -1,0 +1,110 @@
+#section-header {
+    background: url(https://www.redondobeachtourism.com/themes/redondobeach/images/backgrounds/header_bg.jpg) 50%/ cover no-repeat;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+#section-header .header-content {
+    position: relative;
+}
+
+#section-header .site-logo {
+    margin: 0.5rem auto;
+    width: 150px;
+}
+
+#section-header .site-logo .logo {
+    display: block;
+}
+
+header, nav {
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+}
+
+div {
+    display: block;
+}
+
+#menu-overlay .menu .menu-item {
+    margin: 0;
+    padding: 0;
+}
+
+
+#menu-overlay {
+    background: #00485e;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1010;
+}
+
+#menu-overlay .menu {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8vw;
+    border-top: 1px solid #4da9cf;
+    list-style-type: none;
+}
+
+@media (min-width: 768px) {
+    #menu-overlay {
+        background: 0 0;
+        display: block;
+        height: initial;
+        position: initial;
+    }
+}
+
+@media (min-width: 768px) {
+    #menu-overlay .menu {
+        transform: initial;
+        margin: 0;
+        display: flex;
+        padding: 0 8vw;
+    border-top: 1px solid #4da9cf;
+    }
+}
+
+
+.visually-hidden {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    word-wrap: normal;
+}
+
+#menu-overlay .menu .menu-item a {
+    color: #fff;
+    display: block;
+    font-family: Texta-Regular,sans-serif;
+    font-size: 1.25rem;
+    padding: 0.375rem 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: none;
+}
+
+
+
+
