@@ -1,0 +1,195 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leau Car Rental</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="carrental.css">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <header id="section-header">
+        <div class="container-fluid">
+            <div class="header-content d-flex justify-content-center">
+                <div class="site-logo">
+                    <a class="logo" href="index.html">
+                        <img class="img-fluid" src="images/beachlogo2.png" alt="Site Logo">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div id="menu-overlay">
+            <div class="container-fluid">
+                <nav role="navigation" aria-labelledby="block-mainnavigation-menu" id="block-mainnavigation" class="block block-menu navigation menu--main">
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/explore">Explore</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/gallery">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/AboutUs">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Packages">Packages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/member">Membership</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="checkin.html">Check Rates</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container mt-5">
+        <h1>L'eau Car Rental</h1>
+
+        <div class="form-group">
+            <label for="emailInput" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="emailInput" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                else.</small>
+        </div>
+        <div class="form-group">
+            <label for="firstNameInput" class="form-label">Full Name</label>
+            <input type="text" class="form-control" id="fullNameInput" placeholder="Full Name">
+        </div>
+
+        <form id="carRentalForm">
+            <div class="form-group">
+                <label for="pickupDate">Pickup Date:</label>
+                <input type="date" class="form-control" id="pickupDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="days">Number of Days:</label>
+                <input type="number" class="form-control" id="numberDays" required>
+            </div>
+
+            <div class="form-group">
+                <label>Options:</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="3.95" id="tollTag">
+                    <label class="form-check-label" for="tollTag">Electronic Toll Tag $3.95/day</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="2.95" id="gps">
+                    <label class="form-check-label" for="gps">GPS $2.95/day</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="2.95" id="roadsideAssistance">
+                    <label class="form-check-label" for="roadsideAssistance">Roadside Assistance $2.95/day</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Under 25 years (30% surcharge for drivers under 25):</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="under25" id="yesUnder25" value="yes">
+                    <label class="form-check-label" for="yesUnder25">Yes</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="under25" id="noUnder25" value="no">
+                    <label class="form-check-label" for="noUnder25">No</label>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="estimateTotalButton">Estimate Total Cost</button>
+        </form>
+
+        <section class="mt-4 pt-4 border-top">
+            <h1>Order Details</h1>
+            <div>Name: <span id="nameDisplay"></span></div>
+            <div>Email: <span id="emailDisplay"></span></div>
+            <div>Pickup Date: <span id="pickupDateDisplay"></span></div>
+            <div>Number of Days: <span id="numberDaysDisplay"></span></div>
+            
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="w-75 text-end pr-5">Auto: <span id="typeDisplay">Nissan Altima</span></td>
+                    <td id="sizePriceCell">29.99</td>
+                </tr>
+                
+                <tr id="tollTagFee" style="display: none;">
+                    <td class="w-75 text-end pr-5">Toll Tag Fee</td>
+                    <td>3.95</td>
+                </tr>
+                <tr id="gpsFee" style="display: none;">
+                    <td class="w-75 text-end pr-5">GPS Fee</td>
+                    <td>2.95</td>
+                </tr>
+                <tr id="roadsideFee" style="display: none;">
+                    <td class="w-75 text-end pr-5">Roadside Assitance Fee</td>
+                    <td>2.95</td>
+                </tr>
+                <tr>
+                    <td>Under 25 Surcharge Total</td>
+                    <td id="under25Total">$</td>
+                </tr>
+                <tr class="table-warning">
+                    <th class="w-75 text-end pr-5">Total</th>
+                    <th id="totalPriceDisplay">11.99</th>
+                </tr>
+           
+            </tbody>
+        </table>
+    </div>
+
+    <footer class="the_footer">
+        <div class="container-fluid footer_container">
+            <div class="footer_upper">
+                <div class="footer_left">
+                    <a href="#" class="main-link">Request More Info</a>
+                    <div class="social-media-icons">
+                        <a href="https://www.facebook.com/">
+                            <img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" alt="Facebook">
+                        </a>
+                        <a href="https://www.twitter.com/">
+                            <img src="https://img.icons8.com/fluent/48/000000/twitter.png" alt="Twitter">
+                        </a>
+                        <a href="https://www.instagram.com/">
+                            <img src="https://img.icons8.com/fluent/48/000000/instagram-new.png" alt="Instagram">
+                        </a>
+                    </div>
+
+                </div>
+
+                <div class="footer_right">
+                    <div class="footer_column">
+                        <a href="#">Membership</a>
+                        <a href="#">Contact</a>
+                        <a href="carrental.html">Car Rental</a>
+                    </div>
+                </div>
+
+                <div class="footer_bottom">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="carrental.js"></script>
+</body>
+
+</html>
