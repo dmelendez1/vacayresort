@@ -40,10 +40,10 @@ function calculateEstimate() {
 }
 
 function getRoomRate(checkInDate, roomType) {
-    const month = new Date(checkInDate).getMonth() + 1;
+    const month = new Date(checkInDate).getMonth() + 1; /* + 1 bc months are represented as 0-11, so Jan = 0*/
     switch (roomType) {
         case "queen":
-            return (month >= 6 && month <= 8) ? 250 : 150;
+            return (month >= 6 && month <= 8) ? 250 : 150; /*if-else, ? means if, : means else*/
         case "king":
             return (month >= 6 && month <= 8) ? 250 : 150;
         case "suite":
